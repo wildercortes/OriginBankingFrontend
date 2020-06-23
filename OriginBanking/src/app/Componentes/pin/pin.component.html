@@ -1,1 +1,23 @@
-<p>pin works!</p>
+<mat-card class="container">
+    <mat-card-title style="text-align:center">Ingrese numero de pin</mat-card-title>
+   <form #form="ngForm" [formGroup]="formGroup"  autocomplete="off">
+   
+       <mat-form-field class="full-width ">
+         <input  matInput placeholder="Ingrese numero de pin" formControlName="pin"   class="input" value={{value}} (focus)="input.blur()" #input>
+          <mat-error *ngIf="formGroup.get('pin').errors?.required">Numero de pin requerido.</mat-error> 
+         <mat-error *ngIf="formGroup.get('pin').errors?.pattern">El numero de pin debe  ser numerico y contener 4 digitos</mat-error>      
+       </mat-form-field>
+   
+       <div style="text-align:center">
+         <div class="simple-keyboard"></div>
+       </div> 
+       <div class="Buttons">
+       <mat-dialog-actions >
+         <button class="form-btn"  mat-raised-button color="primary" [disabled]="form.invalid" (click)="Enviar(form.value)" > Aceptar</button>
+         <button mat-raised-button color="warn"  (click)="Clean()">Limpiar</button>
+         <button mat-raised-button color="warn"  (click)="Return()"  mat-button>Salir</button> 
+
+       </mat-dialog-actions>
+     </div>
+     </form>
+   </mat-card>  

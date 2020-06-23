@@ -1,1 +1,27 @@
-<p>tarjeta works!</p>
+<mat-card class="container">
+    <mat-card-title style="text-align:center">Ingrese numero de trajeta</mat-card-title>
+   <form #form="ngForm" [formGroup]="formGroup"  autocomplete="off">
+   
+       <mat-form-field class="full-width ">
+         <input  matInput placeholder="Ingrese numero de tarjeta" formControlName="card"   class="input" value={{value}} (focus)="input.blur()" #input>
+          <mat-error *ngIf="formGroup.get('card').errors?.required">Numero de tarjeta requerido.</mat-error> 
+         <mat-error *ngIf="formGroup.get('card').errors?.pattern">El numero de tarjeta debe  ser numerico y contener 16 digitos</mat-error>      
+       </mat-form-field>
+   
+       <div style="text-align:center">
+         <div class="simple-keyboard"></div>
+       </div> 
+       <div class="Buttons">
+       <mat-dialog-actions >
+         <button class="form-btn"  mat-raised-button color="primary" [disabled]="form.invalid" (click)="Enviar(form.value)" > Aceptar</button>
+         <button mat-raised-button color="warn"  (click)="Clean()">Limpiar</button>
+       </mat-dialog-actions>
+     </div>
+     </form>
+   </mat-card> 
+   
+   
+   
+   
+   
+   

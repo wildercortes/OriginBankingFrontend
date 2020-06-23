@@ -1,1 +1,18 @@
-<p>success works!</p>
+<mat-card class="container">
+    <mat-card-title style="text-align:center">Operacion Exitosa</mat-card-title>
+    <form >
+        <div>Titular:  {{firstname}}  {{lastname}} </div>
+        <div>Numero de cuenta: {{cuenta}}</div>
+       <div>Fecha: {{date | date:'medium'}} </div>
+       <div>Monto Retirado:  {{monto}}  </div>
+        <div>Balance actual: {{balance}} </div>
+        
+       
+       
+        <mat-card-actions>
+            <div><button mat-raised-button color="warn" class="full-width " [routerLink]='["/Tarjeta"]'>Salir</button></div>
+            <div><button mat-raised-button color="primary" class="full-width " [routerLink]='["/Operations"]'>Atras</button></div>
+        </mat-card-actions>
+    
+         </form>
+   </mat-card>  

@@ -1,1 +1,40 @@
-<p>balance works!</p>
+<div class="container" class="index-table">
+    <div class="header">
+      <h1>Balance de cuenta de {{firstname}} {{lastname}}   </h1>
+      <span class="spacer"></span>
+     
+    </div>
+    Balance actual: 
+
+    {{balance}} 
+    <button mat-flat-button color="accent"  [routerLink]='["/Operations"]'>Volver</button>
+    <button mat-flat-button color="warn" [routerLink]='["/Tarjeta"]'>Salir</button>
+      <div class="table-container mat-elevation-z2">
+      <mat-table  [dataSource]="dataSource">
+
+        <ng-container matColumnDef="operation">
+          <mat-header-cell *matHeaderCellDef> Tipo de Operacion </mat-header-cell>
+          <mat-cell *matCellDef="let balance"> {{  balance.operacion  }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="monto">
+          <mat-header-cell *matHeaderCellDef> Monto </mat-header-cell>
+          <mat-cell *matCellDef="let balance"> {{  balance.quantity  }} </mat-cell>
+        </ng-container>
+
+         <ng-container matColumnDef="numero">
+            <mat-header-cell *matHeaderCellDef> Numero de Tarjeta </mat-header-cell>
+            <mat-cell *matCellDef="let balance"> {{  balance.number  }} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let balance"> {{  balance.date | date:'medium'  }} </mat-cell>
+          </ng-container>
+
+         
+         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> 
+      </mat-table>
+    </div>  
+</div> 

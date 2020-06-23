@@ -1,1 +1,12 @@
-<p>operations works!</p>
+<mat-card class="container">
+    <mat-card-title style="text-align:center">Que tipo de operacion deseas realizar</mat-card-title>
+   <form >
+    <mat-card-actions>
+        <div><button mat-raised-button color="accent" class="full-width " [routerLink]='["/Retiro"]'>Retirar</button></div>
+        <div><button mat-raised-button color="primary" class="full-width " [routerLink]='["/Balance"]'>Balance</button></div> 
+        <div><button mat-raised-button color="warn" class="full-width " [routerLink]='["/Tarjeta"]'>Salir</button></div>
+        
+    </mat-card-actions>
+
+     </form>
+   </mat-card>
