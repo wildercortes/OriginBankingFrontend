@@ -9,7 +9,7 @@ import { Balance } from '../Models/balance';
 })
 export class BalanceService {
 
-  private apiURL = "https://localhost:44365/api/Balance"; 
+  private apiURL = "https://localhost:44312/api/Balance"; 
 
   constructor(private http: HttpClient) { }
 
