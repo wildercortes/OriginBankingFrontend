@@ -1,1 +1,5 @@
 Este el el frontend de la aplicacion realizado en Angular.
+Los servicios BalanceService y AccountService de la aplicación deben contener el campo
+private apiURL = "https://localhost:44312/api/Cards";
+el cual es que hace apuntar al backend  en caso de que al ejecutar la aplicacion backend este puerto sea distinto del mencionado
+se debe cambiar para que coincida de lo contrario no tendra datos la aplicacion.
